@@ -66,7 +66,6 @@ BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE                := bcmdhd
 BOARD_HAVE_SAMSUNG_WIFI          := true
-BOARD_LEGACY_NL80211_STA_EVENTS  := true
 
 WIFI_DRIVER_MODULE_PATH          := "/lib/modules/dhd.ko"
 WIFI_DRIVER_MODULE_NAME          := "dhd"
@@ -161,5 +160,6 @@ TARGET_RECOVERY_FSTAB := device/samsung/ancora/recovery.fstab
 # End recovery stuff
 
 TARGET_PREBUILT_KERNEL := device/samsung/ancora/prebuilt/zImage
+TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/ancora/recovery/zImage
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
