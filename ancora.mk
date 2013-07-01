@@ -149,7 +149,8 @@ PRODUCT_PACKAGES += \
     libnetcmdiface \
     PhotoTable \
     Apollo \
-    CMFileManager
+    CMFileManager \
+    Torch
 
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
