@@ -147,7 +147,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     libnetcmdiface \
-    PhotoTable
+    PhotoTable \
+    Apollo \
+    CMFileManager
 
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
