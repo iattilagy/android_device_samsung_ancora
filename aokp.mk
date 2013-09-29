@@ -1,19 +1,16 @@
 # Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
+$(call inherit-product, vendor/aokp/configs/gsm.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common AOKP stuff.
+$(call inherit-product, vendor/aokp/configs/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, $(LOCAL_PATH)/full_ancora.mk)
 
 PRODUCT_RELEASE_NAME := ancora
 
-#CM_EXPERIMENTAL := true
-#CM_EXTRAVERSION := alpha1
-
 # Setup device configuration
-PRODUCT_NAME := cm_ancora
+PRODUCT_NAME := aokp_ancora
 PRODUCT_DEVICE := ancora
 PRODUCT_BRAND := Samsung
 PRODUCT_MANUFACTURER := Samsung
