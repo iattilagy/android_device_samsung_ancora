@@ -148,6 +148,120 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">7</integer>
 
+<<<<<<< HEAD
     <!-- Device supports LED flashlight -->
     <bool name="config_enableTorch">true</bool>
+=======
+    <!-- Boolean to enable adb by default on a per-device basis -->
+    <bool name="config_enableAdbByDefault">true</bool>
+
+    <!-- Enable lockscreen translucent decor -->
+    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
+    
+    <!-- Device configuration setting the /proc/sys/vm/extra_free_kbytes tunable in the kernel (if it exists). A high value will increase the amount of memory that the kernel tries to keep free, reducing allocation time and causing the lowmemorykiller to kill earlier. A low value allows more memory to be used by processes but may cause more allocations to block waiting on disk I/O or lowmemorykiller. Overrides the default value chosen by ActivityManager based on screen size. 0 prevents keeping any extra memory over what the kernel keeps by default. -1 keeps the default. -->
+    <integer name="config_extraFreeKbytesAbsolute">-1</integer>
+ 
+    <!-- Device configuration adjusting the /proc/sys/vm/extra_free_kbytes tunable in the kernel (if it exists). 0 uses the default value chosen by ActivityManager. A positive value will increase the amount of memory that the kernel tries to keep free, reducing allocation time and causing the lowmemorykiller to kill earlier. A negative value allows more memory to be used by processes but may cause more allocations to block waiting on disk I/O or lowmemorykiller. Directly added to the default value chosen by ActivityManager based on screen size. -->
+    <integer name="config_extraFreeKbytesAdjust">0</integer>
+
+    <!-- Device configuration setting the /proc/sys/vm/extra_free_kbytes tunable in the kernel (if it exists). A high value will increase the amount of memory that the kernel tries to keep free, reducing allocation time and causing the lowmemorykiller to kill earlier. A low value allows more memory to be used by processes but may cause more allocations to block waiting on disk I/O or lowmemorykiller. Overrides the default value chosen by ActivityManager based on screen size. 0 prevents keeping any extra memory over what the kernel keeps by default. -1 keeps the default. -->
+    <integer name="config_extraFreeKbytesAbsolute">-1</integer>
+
+    <!-- Device configuration adjusting the /proc/sys/vm/extra_free_kbytes tunable in the kernel (if it exists). 0 uses the default value chosen by ActivityManager. A positive value will increase the amount of memory that the kernel tries to keep free, reducing allocation time and causing the lowmemorykiller to kill earlier. A negative value allows more memory to be used by processes but may cause more allocations to block waiting on disk I/O or lowmemorykiller. Directly added to the default value chosen by ActivityManager based on screen size. -->
+    <integer name="config_extraFreeKbytesAdjust">0</integer>
+
+    <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
+         Software implementation will be used if config_hardware_auto_brightness_available
+         is not set -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+    <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
+         The N entries of this array define N + 1 zones as follows:
+
+         Zone 0:        0 <= LUX < array[0]
+         Zone 1:        array[0] <= LUX < array[1]
+         ...
+         Zone N:        array[N - 1] <= LUX < array[N]
+         Zone N + 1:    array[N] <= LUX < infinity
+
+         Must be overridden in platform specific overlays -->
+	 <integer-array name="config_autoBrightnessLevels">
+        <item>100</item>
+        <item>200</item>
+        <item>400</item>
+        <item>670</item>
+        <item>1000</item>
+        <item>1220</item>
+        <item>1360</item>
+        <item>1480</item>
+        <item>1570</item>
+        <item>1660</item>
+        <item>1750</item>
+        <item>1840</item>
+        <item>1950</item>
+    </integer-array>
+
+    <!-- Array of output values for LCD backlight corresponding to the LUX values
+         in the config_autoBrightnessLevels array.  This array should have size one greater
+         than the size of the config_autoBrightnessLevels array.
+         This must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
+        <item>120</item>
+        <item>140</item>
+        <item>160</item>
+        <item>180</item>
+        <item>200</item>
+        <item>220</item>
+        <item>240</item>
+        <item>255</item>
+    </integer-array>
+
+    <!-- Array of output values for button backlight corresponding to the LUX values
+         in the config_autoBrightnessLevels array.  This array should have size one greater
+         than the size of the config_autoBrightnessLevels array.
+         This must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessButtonBacklightValues">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+    </integer-array>
+
+    <!-- Array of output values for keyboard backlight corresponding to the LUX values
+         in the config_autoBrightnessLevels array.  This array should have size one greater
+         than the size of the config_autoBrightnessLevels array.
+         This must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessKeyboardBacklightValues">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+    </integer-array>
+>>>>>>> be94094... overlay: add extraFreeKbytes - new feature Android 4.4
 </resources>

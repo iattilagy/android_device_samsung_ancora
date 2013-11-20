@@ -105,6 +105,7 @@ PRODUCT_PACKAGES += \
     copybit.msm7x30 \
     gralloc.msm7x30 \
     hwcomposer.msm7x30 \
+    memtrack.msm7x30 \
     gps.msm7x30 \
     lights.msm7x30 \
     power.msm7x30 \
@@ -141,6 +142,14 @@ PRODUCT_PACKAGES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0
 
+#Disable JIT cache
+ PRODUCT_PROPERTY_OVERRIDES += \
+     dalvik.vm.jit.codecachesize=0
+
+#disable preloading of EGL/GL drivers in Zygote at boot time
+ PRODUCT_PROPERTY_OVERRIDES += \
+     ro.zygote.disable_gl_preload=true     
+ 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
